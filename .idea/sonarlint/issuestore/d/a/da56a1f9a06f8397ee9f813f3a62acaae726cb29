@@ -1,15 +1,0 @@
-
-zpython:S1871"dEither merge this branch with the identical one on line "1621" or change one of the implementations.(‡Ğ©å
-gpython:S1134"LTake the required action to fix the issue indicated by this "FIXME" comment.(ûÉôŸıÿÿÿÿ
-kpython:S3776"URefactor this function to reduce its Cognitive Complexity from 122 to the 15 allowed.(´£·¡
-jpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 69 to the 15 allowed.(ˆ¡ù•
-jpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(Ú…œ‚
-opython:S3776"TRefactor this function to reduce its Cognitive Complexity from 40 to the 15 allowed.(˜ Ô‚øÿÿÿÿ
-jpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(øïæø
-opython:S3776"TRefactor this function to reduce its Cognitive Complexity from 37 to the 15 allowed.(ÙÃ¿’şÿÿÿÿ
-opython:S3776"TRefactor this function to reduce its Cognitive Complexity from 23 to the 15 allowed.(™Ğëıÿÿÿÿ
-jpython:S3776"TRefactor this function to reduce its Cognitive Complexity from 19 to the 15 allowed.(à¤ã·
-opython:S3776"TRefactor this function to reduce its Cognitive Complexity from 25 to the 15 allowed.(œâúßüÿÿÿÿ
-spython:S100"YRename method "_get_FIELD_display" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(Ô“Ÿóøÿÿÿÿ
-zpython:S100"eRename method "_get_next_or_previous_by_FIELD" to match the regular expression ^[a-z_][a-z0-9_]{2,}$.(²¢”¬
-Jpython:S1066"/Merge this if statement with the enclosing one.(øÃñàúÿÿÿÿ
