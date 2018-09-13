@@ -1,0 +1,9 @@
+
+<section class="multi-row-swiper-container checkPlaylist">
+    <div class="swiper-container swiper-padding-left square-swiper multi-row-swiper playlist-song no-fastclick">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide the-song" avatar="23sz2" album-cover="23sz6"><a href="#" data-src="{{song.song.url}}"></a><div class="slide slide"><div class="img-play"><img src="{{song.artist.artist_img.url}}" width="100%" height="auto"></div></div><h2>{{song.title}}</h2><cite class="author" avatar="{{song.artist.artist_img.url}}" album-cover="{{song.artist.artist_img.url}}"><a href="{% url 'artist_profile' song.artist.id %}" checkClick="checkClick">{{song.artist}}</a></cite></div>
+        <div class="swiper-slide"></div>
+      </div>
+    </div>
+</section>

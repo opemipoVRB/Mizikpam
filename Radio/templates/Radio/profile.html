@@ -1,0 +1,132 @@
+<div id="profile-1" data-page="profile" class="page nope profile profile-1 special-scroll ">
+    <div class="album-cover-blur"><img src="{{username.photo.url}}" class="album cover" alt="cover" width="100%" height="100%"></div>
+  
+    <section class="headers" header-type="back" header-style="style3" header-icon-style="user">
+      <header>
+        <div class="main-grids safe-area">
+          <div class="inner">
+            <a href="#" class="link back"><button class="back-icon"></button></a>
+            <a href="{% url 'profile' username %}"><button class="icon user-icon"></button></a>
+            <div class="album-cover"><img src="{{username.photo.url}}" class="album cover" alt="cover" width="100%" height="100%"></div>
+            <div class="title-author"><h2 class="title">{{username}}</h2></div>
+            <button class="icon menu-icon open-panel"></button>
+            <button class="search-icon" essential-search="show"></button>
+            <button class="options-icon"></button>
+            <button class="buy-button song-price" checksongprice="checkSongPrice" checkclick="checkClick"><b checksongprice="checkSongPrice" checkclick="checkClick">$ 0,00</b><span checksongprice="checkSongPrice" checkclick="checkClick" class="">Buy</span></button>
+          </div>
+        </div>
+      </header>
+    </section>
+  
+    <div class="scrollable-content ">
+      <div class="bottom-padding special-scroll-tab active">
+  
+        <section class="profile-avatar-user">
+          <div class="main-grids safe-area">
+            <div class="inner">
+              <img alt="Avatar User" src="{{username.photo.url}}" width="100%" height="auto">
+              <div class="user-country">
+                <cite class="user">{{username}}</cite>
+                <p class="country">Italy</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+          <section class="profile-follow-info">
+        <div class="main-grids safe-area">
+          <div class="inner">
+            <div class="followers"><div class="number">480</div><p>No of Songs Played</p></div>
+            <div class="following"><div class="number">340</div><p>No of Favourite Songs</p></div>
+            <button class="following">Edit Profile</button>
+          </div>
+        </div>
+      </section>
+  
+        <section class="section-titles" section-type="standard" see-all-style="no_see-all" section-icon-style="favourites_white" section-title-style="left">
+            <header>
+              <div class="main-grids safe-area">
+                <div class="inner">
+                  <div class="icon"></div>
+                  <h2>Favourite playlist</h2>
+                </div>
+              </div>
+            </header>
+          </section>
+        <section class="best-playlists-swiper-container checkPlaylist">
+          <div class="swiper-container swiper-padding-left square-swiper playlist-swiper best-playlists-swiper-container no-fastclick">
+            <div class="swiper-wrapper">
+                {% for playlist in favourite_playlists %}
+              <div class="swiper-slide the-playlist" album-cover="{{ playlist.playlist_art.url}}">
+                  <div class="slide slide-1">
+                      <a href="{% url 'playlist' playlist.id %}">
+                          <div class="img-play">
+                              <img src="{{ playlist.playlist_art.url}}" width="100%" height="auto">
+                              <div class="blur"></div>
+                              <div class="playlist-song-number">
+                                  112 Songs
+                              </div>
+                          </div>
+                      </a>
+                  </div>
+                  <h2>{{playlist.title}}</h2>
+                  <p class="playlist-followers">128.708</p>
+              </div>
+                {% endfor %}
+                <div class="swiper-slide"></div>
+            </div>
+          </div>
+        </section>
+  
+       
+      
+        <!-- Recently Played -->
+        <section class="section-titles" section-type="standard" see-all-style="style2" section-icon-style="play_white" section-title-style="left">
+          <header>
+            <div class="main-grids safe-area">
+              <div class="inner">
+                <div class="icon"></div>
+                <h2>Recently Played</h2>
+                <div class="see-all"><p><a href="see-all.html" checkClick="checkClick">Play All</a></p></div>
+              </div>
+            </div>
+          </header>
+        </section>
+      
+        <section class="list-songs playlist-song checkPlaylist" avatar="hide" author="show" song-time="hide" song-price="hide" like-number="show" add-to="show" delete-track="hide" ranking="hide" like-heart-style="style3" like-number-style="style1">
+          <div class="main-grids safe-area">
+            <div class="inner">
+              <div class="the-song first slide slide-1" avatar="46sz2" album-cover="46sz6"><a href="#" data-src="../src/music/song1.mp3"></a><div class="delete-track"><svg checkclick="checkClick" width="22" height="22" viewBox="0 0 22 22"><path checkClick="checkClick" fill="#FFF" fill-rule="evenodd" d="M11 22C4.925 22 0 17.075 0 11S4.925 0 11 0s11 4.925 11 11-4.925 11-11 11zM5.704 11c0 .68.544 1.222 1.215 1.222h8.162c.675 0 1.215-.547 1.215-1.222 0-.68-.544-1.222-1.215-1.222H6.92c-.675 0-1.215.547-1.215 1.222z"/></svg></div><div class="author-like-wrapper"><p class="rank">1</p><div class="author-avatar"><img alt="Author" src="../src/images/artist/46sz2.jpg" width="100%" height="auto"></div><div class="author-like"><div class="song-title-author"><h2 class="title">Title Here</h2><cite class="author" avatar="46sz2" album-cover="46sz6"><a href="artist-profile.html" checkClick="checkClick">Author</a></cite></div><div class="song-info-options-container"><div class="like-container"><span class="heart-icon active"><svg checkClick="checkClick" width="16px" height="15px" viewBox="0 0 16 15"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(1.000000, 1.000000)"><g transform="translate(-2.000000, -3.000000)"><rect x="0" y="0" width="18" height="18"></rect><path checkClick="checkClick" d="M9,5.70689931 C9.71495864,3.78248227 10.8248268,3 12.0625,3 C14.2373039,3 16,4.97331321 16,7.40764925 C16,12.4491242 9,15.3414179 9,15.3414179 C9,15.3414179 2,12.4491242 2,7.40764925 C2,4.97331321 3.76269608,3 5.9375,3 C7.1751732,3 8.38818359,3.78248227 9,5.70689931 Z" id="shapes" stroke="#FFFFFF" stroke-width="1.7"></path></g></g></g></svg></span><span checkClick="checkClick" class="like">1.505</span></div><span checkClick="checkClick" class="song-time">3.20</span><span checkClick="checkClick" class="song-price" checkSongPrice="checkSongPrice" checkclick="checkClick"><b checkSongPrice="checkSongPrice" checkclick="checkClick">$ 0.99</b></span><span checkClick="checkClick" class="song-plus"></span></div></div><div class="divider"></div></div></div>
+              <div class="the-song slide slide-5" avatar="37sz2" album-cover="37sz6"><a href="#" data-src="../src/music/song5.mp3"></a><div class="delete-track"><svg checkclick="checkClick" width="22" height="22" viewBox="0 0 22 22"><path checkClick="checkClick" fill="#FFF" fill-rule="evenodd" d="M11 22C4.925 22 0 17.075 0 11S4.925 0 11 0s11 4.925 11 11-4.925 11-11 11zM5.704 11c0 .68.544 1.222 1.215 1.222h8.162c.675 0 1.215-.547 1.215-1.222 0-.68-.544-1.222-1.215-1.222H6.92c-.675 0-1.215.547-1.215 1.222z"/></svg></div><div class="author-like-wrapper"><p class="rank">5</p><div class="author-avatar"><img alt="Author" src="../src/images/artist/37sz2.jpg" width="100%" height="auto"></div><div class="author-like"><div class="song-title-author"><h2 class="title">Title Here</h2><cite class="author" avatar="37sz2" album-cover="37sz6"><a href="artist-profile.html" checkClick="checkClick">Author</a></cite></div><div class="song-info-options-container"><div class="like-container"><span class="heart-icon active"><svg checkClick="checkClick" width="16px" height="15px" viewBox="0 0 16 15"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(1.000000, 1.000000)"><g transform="translate(-2.000000, -3.000000)"><rect x="0" y="0" width="18" height="18"></rect><path checkClick="checkClick" d="M9,5.70689931 C9.71495864,3.78248227 10.8248268,3 12.0625,3 C14.2373039,3 16,4.97331321 16,7.40764925 C16,12.4491242 9,15.3414179 9,15.3414179 C9,15.3414179 2,12.4491242 2,7.40764925 C2,4.97331321 3.76269608,3 5.9375,3 C7.1751732,3 8.38818359,3.78248227 9,5.70689931 Z" id="shapes" stroke="#FFFFFF" stroke-width="1.7"></path></g></g></g></svg></span><span checkClick="checkClick" class="like">12.554</span></div><span checkClick="checkClick" class="song-time">2.55</span><span checkClick="checkClick" class="song-price" checkSongPrice="checkSongPrice" checkclick="checkClick"><b checkSongPrice="checkSongPrice" checkclick="checkClick">$ 0.99</b></span><span checkClick="checkClick" class="song-plus"></span></div></div><div class="divider"></div></div></div>
+              <div class="the-song last slide slide-6" avatar="22sz2" album-cover="22sz6"><a href="#" data-src="../src/music/song6.mp3"></a><div class="delete-track"><svg checkclick="checkClick" width="22" height="22" viewBox="0 0 22 22"><path checkClick="checkClick" fill="#FFF" fill-rule="evenodd" d="M11 22C4.925 22 0 17.075 0 11S4.925 0 11 0s11 4.925 11 11-4.925 11-11 11zM5.704 11c0 .68.544 1.222 1.215 1.222h8.162c.675 0 1.215-.547 1.215-1.222 0-.68-.544-1.222-1.215-1.222H6.92c-.675 0-1.215.547-1.215 1.222z"/></svg></div><div class="author-like-wrapper"><p class="rank">6</p><div class="author-avatar"><img alt="Author" src="../src/images/artist/22sz2.jpg" width="100%" height="auto"></div><div class="author-like"><div class="song-title-author"><h2 class="title">Title Here</h2><cite class="author" avatar="22sz2" album-cover="22sz6"><a href="artist-profile.html" checkClick="checkClick">Author</a></cite></div><div class="song-info-options-container"><div class="like-container"><span class="heart-icon"><svg checkClick="checkClick" width="16px" height="15px" viewBox="0 0 16 15"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(1.000000, 1.000000)"><g transform="translate(-2.000000, -3.000000)"><rect x="0" y="0" width="18" height="18"></rect><path checkClick="checkClick" d="M9,5.70689931 C9.71495864,3.78248227 10.8248268,3 12.0625,3 C14.2373039,3 16,4.97331321 16,7.40764925 C16,12.4491242 9,15.3414179 9,15.3414179 C9,15.3414179 2,12.4491242 2,7.40764925 C2,4.97331321 3.76269608,3 5.9375,3 C7.1751732,3 8.38818359,3.78248227 9,5.70689931 Z" id="shapes" stroke="#FFFFFF" stroke-width="1.7"></path></g></g></g></svg></span><span checkClick="checkClick" class="like">32.844</span></div><span checkClick="checkClick" class="song-time">5.09</span><span checkClick="checkClick" class="song-price" checkSongPrice="checkSongPrice" checkclick="checkClick"><b checkSongPrice="checkSongPrice" checkclick="checkClick">$ 0.99</b></span><span checkClick="checkClick" class="song-plus"></span></div></div><div class="divider"></div></div></div>
+            </div>
+          </div>
+        </section>
+          <!-- Recently Played -->
+          
+          <!-- favourite-artist -->
+        <section class="section-titles" section-type="standard" see-all-style="style2" section-icon-style="favourites_artists_white" section-title-style="left">
+          <header>
+            <div class="main-grids safe-area">
+              <div class="inner">
+                <div class="icon"></div>
+                <h2>Favourite Artist </h2>
+                <div class="see-all"><p><a href="see-all.html" checkClick="checkClick">See All</a></p></div>
+              </div>
+            </div>
+          </header>
+        </section>
+        <section class="favourite-artists-container checkPlaylist">
+          <div class="swiper-container swiper-padding-left favourite-artist-swiper no-fastclick">
+            <div class="swiper-wrapper" swiper-style="style1">
+                {% for artist in favourite_artists %}
+              <div class="swiper-slide"><div class="circle-number"><div class="inner">12</div></div><a href="{% url 'artist_profile' artist.id %}"><div class="slide favourite-artist-1" album-cover="{{artist.artist_img.url}}" avatar="{{artist.artist_img.url}}"><img src="{{artist.artist_img.url}}" width="100%" height="auto"><cite class="author" album-cover="{{artist.artist_img.url}}" avatar="{{artist.artist_img.url}}">{{artist.name}}</cite></div></a></div>
+                {% endfor %}
+              <div class="swiper-slide"></div>
+            </div>
+          </div>
+        </section>
+  <!-- favourite-artist -->
+      </div>
+    </div>
+  </div>

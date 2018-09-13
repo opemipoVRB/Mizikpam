@@ -1,0 +1,37 @@
+<h1>{{ browse.start_time }}</h1>
+<h1>{{ browse.name }}</h1>
+<img src="{{browse.browse_art.url}}" style="width: 150px; height: 150px">
+<br>
+ {% for playlist, tracks in playlist_tracks.items %}
+
+
+     <li><a href="{% url 'playlist' playlist.id %}">{{ playlist.title }}</a></li>
+    <img src="{{playlist.playlist_art.url}}" style="width: 150px; height: 150px"></br>
+
+
+        {% for track in tracks %}
+<ul>
+       <li>
+               <img src="{{track.album_art.url}}" style="width: 150px; height: 150px"><br/>
+            <span> Title: <a href="{% url 'song' track.id %}">{{ track.title }}</a></span><br/>
+           <span> Artist:<a href="{% url 'artist_profile' track.artist.id %}"> {{track.artist}}</a></span><br/>
+            <span> Album: {{track.album}}</span><br/>
+
+
+         <audio controls style="width: 400px;">
+                        <source src={{track.song.url}} type="audio/mpeg">
+                        Your browser does not support the audio element.
+         </audio>
+         <span> Argument: {{track.id}}</span><br/>
+
+        <br/>
+       </li>
+
+
+</ul>
+
+{% endfor %}
+{% endfor %}
+
+</ul>
+

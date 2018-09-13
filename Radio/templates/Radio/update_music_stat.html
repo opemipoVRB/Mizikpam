@@ -1,0 +1,271 @@
+<div id="content" class="pages">
+<div id="browse-1" data-page="browse-1" class="page browse browse-3 nope">
+
+    <section class="searches essential-search" blur="blur" searchbar-style="style1">
+      <div class="overlay"></div>
+      <div class="inner appearFromTop">
+        <div class="blur"></div>
+        <div class="main-grids safe-area">
+          <div class="search-form-container">
+            <form data-search-list=".list-block-search" data-search-in=".item-title" class="searchbar searchbar-init">
+              <div class="input-container">
+                <input type="search" placeholder="Search…">
+                <div class="search-icon">
+                  <svg width="21" height="21" viewBox="0 0 20 20">
+                      <g>
+                          <path fill="#120810" stroke="#120810" d="M14.117 12.96a7.364 7.364 0 1 0-1.157 1.157l4.643 4.643a.816.816 0 0 0 1.157 0 .818.818 0 0 0 0-1.157l-4.643-4.643zm-5.753 1.13a5.727 5.727 0 1 1 0-11.454 5.727 5.727 0 0 1 0 11.455z"/>
+                      </g>
+                  </svg>
+                </div>
+                <div class="divider"></div>
+              </div>
+              <a href="#" class="searchbar-clear">
+                <svg width="28" height="28" viewBox="0 0 28 28"><g><rect width="28" height="28" fill="#B4B4B4" rx="14"/><path fill="#FFF" d="M15.414 14l3.536-3.536a1 1 0 0 0-1.414-1.414L14 12.586 10.464 9.05a1 1 0 0 0-1.414 1.414L12.586 14 9.05 17.536a1 1 0 0 0 1.414 1.414L14 15.414l3.536 3.536a1 1 0 0 0 1.414-1.414L15.414 14z"/></g></svg>
+                <svg class="svg-style2" width="15px" height="15px" viewBox="0 0 16 17"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g transform="translate(-7.000000, -6.000000)"><rect id="frame" x="0" y="0" width="28" height="28"></rect><path d="M16.9953742,14.5024854 L22.3097444,9.18811519 C22.8600654,8.63779413 22.8600654,7.74554742 22.3097444,7.19522637 C21.7594233,6.64490532 20.8671766,6.64490532 20.3168556,7.19522637 L20.3168556,7.19522637 L15.0024854,12.5095966 L9.68811519,7.19522637 L9.68811519,7.19522637 C9.13779413,6.64490532 8.24554742,6.64490532 7.69522637,7.19522637 C7.14490532,7.74554742 7.14490532,8.63779413 7.69522637,9.18811519 L13.0095966,14.5024854 L7.69522637,19.8168556 C7.14490532,20.3671766 7.14490532,21.2594233 7.69522637,21.8097444 L7.69522637,21.8097444 C8.24554742,22.3600654 9.13779413,22.3600654 9.68811519,21.8097444 L9.68811519,21.8097444 L15.0024854,16.4953742 L20.3168556,21.8097444 L20.3168556,21.8097444 C20.8671766,22.3600654 21.7594233,22.3600654 22.3097444,21.8097444 L22.3097444,21.8097444 C22.8600654,21.2594233 22.8600654,20.3671766 22.3097444,19.8168556 L16.9953742,14.5024854 Z" id="shapes" fill="#FFFFFF"></path></g></g></svg>
+              </a>
+              <a class="searchbar-cancel">Close</a>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <div class="essential-search searchbar-result">
+      <div class="content-block searchbar-not-found"><div class="content-block-inner">Nothing found</div></div>
+      <div class="list-block list-block-search searchbar-found"><ul><li><div class="item-title"></div></li></ul></div>
+    </div>
+
+    <!-- Scrollable page content -->
+    <div class="scrollable-content">
+      <div class="dominant-color dominant-color-1"></div>
+      <section class="headers" header-type="standard" header-style="style1" header-icon-style="user" header-title-style="left">
+        <header>
+          <div class="main-grids safe-area">
+            <div class="inner">
+              <h2>Browse</h2>
+                <!--<a href="profile.html"><button class="icon user-icon"></button></a>-->
+              <button class="icon menu-icon open-panel"></button>
+              <button class="search-icon" essential-search="hide"></button>
+            </div>
+          </div>
+        </header>
+      </section>
+      <section class="playlist-container bottom-padding">
+        <section class="mixed-swiper-container mixed-swipe">
+          <div class="swiper-container swiper-padding-left mixed-swiper-3 playlist-song no-fastclick">
+            <div class="swiper-wrapper">
+                <!--First Browse-->
+                {% for browse in browse_now %}
+              <div class="swiper-slide the-playlist" slide-style="style1">
+                  <div class="slide slide">
+                      <div class="img-inner-wrapper">
+                          <a id="start-browse-play" href="{% url 'browse' browse_id %}">
+                              <img src="{{browse.browse_art.url}}" width="350px" height="250px">
+                              <h2>{{ browse.name }}</h2>
+                          </a>
+                          <div class="slide-label-wrapper">
+                              <div class="slide-label">
+                                  <div class="blur"></div>
+                                  <p>{{ browse.start_time }}</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+                {% endfor %}
+
+                <!--The Rest-->
+                  {% for browse in browse_list  %}
+                  <div class="swiper-slide the-playlist" slide-style="style1">
+                      <div class="slide slide">
+                          <div class="img-inner-wrapper">
+                              <img src="{{ browse.browse_art.url}}" width="300px" height="150px">
+                              <h2>{{ browse.name }}</h2>
+                          </div>
+                          <div class="slide-label-wrapper">
+                              <div class="slide-label">
+                                  <div class="blur"></div>
+                                  <p>{{ browse.start_time }}</p>
+                              </div>
+                          </div>
+                      </div>
+                  </div>
+                {% endfor %}
+            </div>
+          </div>
+
+        </section>
+      </section> <!-- end bottom padding -->
+        <!--Most Played Start-->
+      <section class="section-titles" section-type="standard" see-all-style="style1" section-icon-style="note_1" section-title-style="left">
+        <header>
+          <div class="main-grids safe-area">
+            <div class="inner">
+              <div class="icon"></div>
+              <h2>Most Played</h2>
+              <div class="see-all"><p><a href="see-all.html" checkClick="checkClick">See All</a></p></div>
+            </div>
+          </div>
+        </header>
+      </section>
+      <section class="most-played-swiper-container checkPlaylist">
+        <div class="swiper-container swiper-padding-left square-swiper playlist-swiper most-played-swiper playlist-song no-fastclick">
+          <div class="swiper-wrapper" swiper-label="">
+             {% for most_played_track in most_played_six %}
+              <div class="swiper-slide" avatar="{{most_played_track.track.album_art.url}}" album-cover="{{most_played_track.track.album_art.url}}">
+
+                  <div class="slide slide">
+                      <div class="">
+                          <img src="{{most_played_track.track.album_art.url}}" width="100%" height="150px">
+                      </div>
+                  </div>
+                  <div class="box-type">Song</div>
+                  <h2>{{most_played_track.track.title}}</h2>
+                  <cite class="author" avatar="{{most_played_track.track.artist.artist_img.url}}" album-cover="{{most_played_track.track.artist.artist_img.url}}">
+                      <a href="{% url 'artist_profile' most_played_track.track.artist.id %}" checkClick="checkClick">{{most_played_track.track.artist.name}} </a>
+                  </cite>
+                  <p class="playlist-followers">{{most_played_track.frequency}} Plays</p>
+              </div>
+              {% endfor %}
+            <div class="swiper-slide"></div>
+
+          </div>
+        </div>
+      </section>
+    <!--Most Played End-->
+        <!--Discover-->
+        <section class="section-titles" section-type="standard" see-all-style="style1" section-icon-style="favourites" section-title-style="left">
+    <header>
+      <div class="main-grids safe-area">
+        <div class="inner">
+          <div class="icon"></div>
+          <h2>Discover </h2>
+          <div class="see-all"><p><a href="see-all.html" checkClick="checkClick">See All</a></p></div>
+        </div>
+      </div>
+    </header>
+  </section>
+  <section class="section-tabs" section-type="tabs">
+    <div class="main-grids safe-area">
+      <div class="buttons-row">
+        <a href="#tab1" class="button active tab-link">Genres</a>
+        <a href="#tab2" class="button tab-link">Moods</a>
+      </div>
+    </div>
+  </section>
+  <div class="tabs-animated-wrapp">
+    <div class="tabs">
+      <div id="tab1" class="tab active">
+        <section class="multi-row-swiper-container checkPlaylist">
+          <div class="swiper-container swiper-padding-left square-swiper multi-row-swiper playlist-song no-fastclick">
+            <div class="swiper-wrapper">
+                 {% for song in genres %}
+                <!--get songs with this genre-->
+                <div class="swiper-slide the-playlist" album-cover="{{song.genre_img.url}}"><div class="slide slide"><a href="playlist-v2.html"><div class="img-play"><img src="{{song.genre_img.url}}" width="100%" height="100px"><div class="blur"></div><div class="playlist-song-number">284 Songs</div></div></a></div><h2>{{song.name}}</h2><cite class="author" avatar="{{song.genre_img.url}}" album-cover="{{song.genre_img.url}}"><a href="#">Mizikpam</a></cite></div>
+                {% endfor %}
+              <div class="swiper-slide"></div>
+
+            </div>
+          </div>
+        </section>
+      </div>
+      <div id="tab2" class="tab">
+        <section class="moods-swiper-container checkPlaylist">
+          <div class="swiper-container swiper-padding-left square-swiper multi-row-swiper no-fastclick">
+        <div class="swiper-container swiper-padding-left mood-swiper no-fastclick"> -->
+            <div class="swiper-wrapper">
+                 {% for mood in mood_list %}
+                {% for number in slide_number %}
+
+               <div class="swiper-slide the-playlist mood-{{ number }}" album-cover="{{mood.mood_art.url}}" avatar="{{mood.mood_art.url}}">
+
+                   <a href="{% url 'mood' mood.id %}"><div class="slide slide-{{ number }}"></div><div class="mood-palette"></div><h2>{{mood.title}}</h2></a><cite class="author">Mizikpam</cite><div class="palette-gradient"></div></div>
+                   {% endfor %}
+
+                {% endfor %}
+            </div>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+
+
+
+        <!--Discover end-->
+
+
+    <!--Recently Played-->
+        <section class="section-titles" section-type="standard" see-all-style="style1" section-icon-style="play" section-title-style="left">
+          <header>
+            <div class="main-grids safe-area">
+              <div class="inner">
+                <div class="icon"></div>
+                <h2>Recent Played</h2>
+                <div class="see-all"><p><a href="see-all.html" checkClick="checkClick">See All</a></p></div>
+              </div>
+            </div>
+          </header>
+        </section>
+        <section class="list-songs playlist-song checkPlaylist" avatar="show" author="show" song-time="show" song-price="hide" like-number="hide" add-to="hide" delete-track="hide" ranking="hide" like-heart-style="style1" like-number-style="style1">
+          <div class="main-grids safe-area">
+            <div class="inner">
+                {% for recent_track in recently_played_six %}
+              <div class="slide slide" avatar="{{recent_track.track.artist.artist_img.url}}" album-cover="{{recent_track.track.artist.artist_img.url}}">
+                  <div class="delete-track">
+                      <svg checkclick="checkClick" width="22" height="22" viewBox="0 0 22 22">
+                          <path checkClick="checkClick" fill="#FFF" fill-rule="evenodd" d="M11 22C4.925 22 0 17.075 0 11S4.925 0 11 0s11 4.925 11 11-4.925 11-11 11zM5.704 11c0 .68.544 1.222 1.215 1.222h8.162c.675 0 1.215-.547 1.215-1.222 0-.68-.544-1.222-1.215-1.222H6.92c-.675 0-1.215.547-1.215 1.222z"/>
+                      </svg>
+                  </div>
+                  <div class="author-like-wrapper">
+                      <p class="rank">1</p>
+                      <div class="author-avatar">
+                          <img alt="Author" src="{{recent_track.track.artist.artist_img.url}}" width="100%" height="auto">
+                      </div>
+                      <div class="author-like">
+                          <div class="song-title-author">
+                              <h2 class="title">{{recent_track.track.title}}</h2>
+                              <cite class="author" avatar="{{recent_track.track.artist.artist_img.url}}" album-cover="{{recent_track.track.artist.artist_img.url}}">
+                                  <a href="{% url 'artist_profile' recent_track.track.artist.id %}" checkClick="checkClick">{{recent_track.track.artist.name}}</a>
+                              </cite>
+                          </div>
+                          <div class="song-info-options-container">
+                              <div class="like-container">
+                                  <span class="heart-icon active">
+                                      <svg checkClick="checkClick" width="16px" height="15px" viewBox="0 0 16 15">
+                                          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                              <g transform="translate(1.000000, 1.000000)">
+                                                  <g transform="translate(-2.000000, -3.000000)">
+                                                      <rect x="0" y="0" width="18" height="18"></rect>
+                                                      <path checkClick="checkClick" d="M9,5.70689931 C9.71495864,3.78248227 10.8248268,3 12.0625,3 C14.2373039,3 16,4.97331321 16,7.40764925 C16,12.4491242 9,15.3414179 9,15.3414179 C9,15.3414179 2,12.4491242 2,7.40764925 C2,4.97331321 3.76269608,3 5.9375,3 C7.1751732,3 8.38818359,3.78248227 9,5.70689931 Z" id="shapes" stroke="#FFFFFF" stroke-width="1.7">
+
+                                                      </path>
+                                                  </g>
+                                              </g>
+                                          </g>
+                                      </svg>
+                                  </span>
+                                  <span checkClick="checkClick" class="like">1.505</span>
+                              </div>
+                              <span checkClick="checkClick" class="song-time">3.20</span>
+                              <span checkClick="checkClick" class="song-price" checkSongPrice="checkSongPrice" checkclick="checkClick">
+                                  <b checkSongPrice="checkSongPrice" checkclick="checkClick">$ 0.99</b>
+                              </span>
+                              <span checkClick="checkClick" class="song-plus"></span>
+                          </div>
+                      </div>
+                      <div class="divider"></div>
+                  </div>
+              </div>
+                {% endfor %}
+            </div>
+          </div>
+        </section>
+
+
+
+    Recently Played End -->
+    </div> end scrollable content
+  </div> <!-- end data-index -->
+</div>

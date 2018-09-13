@@ -1,0 +1,14 @@
+{% extends 'Radio/base.html' %}
+{% block content %}
+<img src="{{song.album_art.url}}" style="width: 150px; height: 150px"><br/>
+<span> Title: {{song.title}}</span><br/>
+<span> Artist: <a href="{% url 'artist_profile' song.artist.id %}"> {{song.artist}}</a></span><br/>
+<span> Album: {{song.album}}</span><br/>
+<audio controls style="width: 400px;">
+    <source src={{song.song.url}} type="audio/mpeg">
+    Your browser does not support the audio element.
+
+</audio>
+
+<br/>
+{% endblock %}

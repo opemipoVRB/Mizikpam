@@ -1,0 +1,46 @@
+{% extends "registration/base.html" %}
+{% load i18n %}c
+{% block title %}Sign in{% endblock %}
+{% block content %}
+
+            <div class="cont">
+                    <div class="demo">
+                      <div class="login">
+                        <div class="login__check"></div>
+                        {% load widget_tweaks %}
+                        <div class="login__form">
+                                <form method="post" action=".">
+                                        {% csrf_token %}
+                                        
+                                      
+                          <div class="login__row">
+                            <svg class="login__icon name svg-icon" viewBox="0 0 20 20">
+                              <path d="M0,20 a10,8 0 0,1 20,0z M10,0 a4,4 0 0,1 0,8 a4,4 0 0,1 0,-8" />
+                            </svg>
+                            {{ form.username|append_attr:"placeholder: Username "|add_class:"login__input name"}}
+                          </div>
+                          <div class="login__row">
+                            <svg class="login__icon pass svg-icon" viewBox="0 0 20 20">
+                              <path d="M0,20 20,20 20,8 0,8z M10,13 10,16z M4,8 a6,8 0 0,1 12,0" />
+                            </svg>
+                            {{ form.password|append_attr:"placeholder: Password "|add_class:"login__input pass" }}
+                          </div>
+
+                          <button type="submit" class="login__submit">Sign in</button>
+                          <!-- <input class="login__submit" type="submit" value="{% trans 'Sign in' %}" /> -->
+                          <input type="hidden" name="next" value="{{ next }}" />
+                          </form>
+                          <p class="login__signup">{% trans "Forgot password" %}? <a href="{% url 'auth_password_reset' %}">{% trans "Reset it" %}</a>!</p>
+                          <p class="login__signup">{% trans "Don't have an account" %}? &nbsp;<a href="{% url 'registration_register' %}">{% trans "Sign up" %}</a!></p>
+                        </div>
+                      </div>
+                    </div>
+                </div>
+
+                       
+
+                    
+   
+
+
+{% endblock %}

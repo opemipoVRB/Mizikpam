@@ -1,0 +1,25 @@
+
+{{ playlist.title }}
+    <img src="{{playlist.playlist_art.url}}" style="width: 150px; height: 150px">
+
+{% for track in tracks %}
+<ul>
+       <li>
+               <img src="{{track.album_art.url}}" style="width: 150px; height: 150px"><br/>
+            <span> Title: {{track.title}}</span><br/>
+            <span> Artist: {{track.artist}}</span><br/>
+            <span> Album: {{track.album}}</span><br/>
+
+
+         <audio controls style="width: 400px;">
+                        <source src={{track.song.url}} type="audio/mpeg">
+                        Your browser does not support the audio element.
+         </audio>
+         <span> Argument: {{track.id}}</span><br/>
+
+        <br/>
+       </li>
+    <li><a href="{% url 'song' track.id %}">{{ track.title }}</a></li>
+
+</ul>
+{% endfor %}

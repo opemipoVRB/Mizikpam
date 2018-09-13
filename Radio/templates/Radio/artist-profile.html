@@ -1,0 +1,104 @@
+<div
+  id="artist-profile-1"
+  data-page="artist-profile"
+  class="page nope artist-profile artist-profile-1 special-scroll"
+>
+  <div class="album-cover-blur">
+    <img
+      src="{{artist.artist_img.url}}"
+      class="album cover"
+      alt="cover"
+      width="100%"
+      height="100%"
+    >
+  </div>
+
+  <section
+    class="headers"
+    header-type="back"
+    header-style="style3"
+    header-icon-style="user"
+  >
+    <header>
+      <div class="main-grids safe-area">
+        <div class="inner">
+          <a
+            href="#"
+            class="link back"
+          >
+            <button class="back-icon"></button>
+          </a>
+
+          <!-- <a href="profile.html"><button class="icon user-icon"></button></a> -->
+
+          <div class="album-cover">
+            <img
+              src="{{artist.artist_img.url}}"
+              class="album cover"
+              alt="cover"
+              width="100%"
+              height="100%"
+            >
+          </div>
+
+          <div class="title-author">
+            <h2 class="title">{{artist.name}}</h2>
+
+            <cite
+              class="author"
+              avatar="{{artist.artist_img.url}}"
+              album-cover="{{artist.artist_img.url}}"
+            >Author / Listener</cite>
+          </div>
+
+        </div>
+      </div>
+    </header>
+  </section>
+
+  <div class="scrollable-content">
+    <div class="bottom-padding special-scroll-tab active">
+      <section class="profile-avatar-user">
+        <div class="main-grids safe-area">
+          <div class="inner">
+            <img
+              alt="Avatar User"
+              src="{{artist.artist_img.url}}"
+              width="100%"
+              height="auto"
+            >
+            <div class="user-country">
+              <cite class="user">Title Here</cite>
+              <p class="listeners">Author / Listener</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="section-tabs"
+        section-type="tabs"
+        tabs-style="style2"
+      >
+        <div class="main-grids safe-area">
+          <div class="buttons-row">
+            <h1
+              class="button tab-link releated"
+            >About artist</h1>
+          </div>
+        </div>
+      </section>
+        <section class="all-profile-news">
+              <div class="main-grids safe-area">
+                <div class="inner">
+                     <div class="profile-news news-preview">
+                          <div class="profile-news news-preview"><div class="title-news-container">\<h2 class="title-news" checkclick="checkClick" avatar="35sz2">{{artist.name}}</h2><p class="news-content">{{artist.about}}</p><span class="like">786</span><span class="shares">456</span><span class="news-date">Date Here</span><span class="news-author">Author</span></div></div>
+                     </div>
+                </div>
+              </div>
+        </section>
+
+      </div>
+    </div>
+  </div>
+</div>

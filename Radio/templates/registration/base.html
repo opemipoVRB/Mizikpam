@@ -1,0 +1,24 @@
+<!-- base.html -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+{% load staticfiles %}
+<html>
+<head>
+    <meta charset="utf-8">
+		<title>{% block title %}{% endblock %}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+		<link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Open+Sans'>
+		<link rel="stylesheet" href="{% static 'Radio/css/user.css'%}"/>
+</head>
+
+<body>
+	
+      {% block content %}{% endblock %}
+		<script src="{% static 'css/base.css'%}"></script>
+		<script src="{% static 'Radio/js/jquery-3.3.1.min.js' %} "></script>
+		<script src="{% static 'Radio/js/user.js' %} "></script>
+</body>
+</html>
+
+
+
+

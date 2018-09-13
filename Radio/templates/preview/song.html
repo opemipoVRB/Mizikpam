@@ -1,0 +1,32 @@
+
+<tr>
+	<td colspan="5">
+		<table>
+			<tr>
+				<td>
+					<img src="{{ object.album_art.url }}">
+				</td>
+				<td>
+					Title:{{ song.title }} <br/>
+					Artist: {{ song.artist }}<br/>
+					Album: {{ song.album }}<br/>
+					Track No: {{ song.track_no }}
+                    Genre: {{ song.genre }}<br/>
+                    Composer: {{ song.composer}}<br/>
+                    Release Date: {{ song.release_date }}<br/>
+
+					<br/>
+                    <audio controls>
+                        <!--<source src={{ song.song}} type="audio/ogg">-->
+                        <source src={{ song.song}} type="audio/mpeg">
+                        Your browser does not support the audio element.
+                    </audio>
+					<!--Tags: {% for tag in object.get_tags %}-->
+							<!--{{ tag }}-->
+							<!--{% if not forloop.last %}, {% endif %}-->
+						  <!--{% endfor %}-->
+				</td>
+			</tr>
+		</table>
+	</td>
+</tr>
