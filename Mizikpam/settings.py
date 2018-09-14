@@ -25,7 +25,7 @@ SECRET_KEY = '-!*b3pi&7q0&fg-540!oku3ctm60z6^c*i8e12+k)bf+26alqg'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['mizikpam-env.p8qtkj64b3.us-west-2.elasticbeanstalk.com']
+ALLOWED_HOSTS = ['mizikpam-test-env.p8qtkj64b3.us-west-2.elasticbeanstalk.com']
 
 # Application definition
 
